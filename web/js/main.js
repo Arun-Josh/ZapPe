@@ -1,10 +1,40 @@
-$("signinbtn").click(function(){
-    $.ajax({url: "login", success: function(result){
-            // $("#div1").html(result);
-            window.location.href
-        }});
-});
+// $("signinbtn").click(function(){
+//     $.ajax({url: "login", success: function(result){
+//             // $("#div1").html(result);
+//
+//             window.location.href
+//         }});
+// });
 
+function login(){
+    // document.getElementById("admin").style.display="none";
+    document.getElementById("hidden").style.display="none";
+
+    var xhr = new XMLHttpRequest();
+    var url = "login";
+    xhr.onreadystatechange = function () {
+        if(xhr.status==200 && xhr.readyState==4){
+            var reply = xhr.responseText;
+            console.log("reply "+reply);
+            if(reply=="OK"){
+                window.location.href="home.html";
+            }
+            else{
+                document.getElementById("hidden").style.display = "block";
+            }
+        }
+    }
+    var pass = document.getElementById("pass").value;
+    var mail = document.getElementById("mail").value;
+    // var hashObj = new jsSHA("SHA-512","TEXT",{numRounds:1});
+    // hashObj.update(mail+pass1);
+    // var hash = hashObj.getHash("HEX");
+    // url+="/mail="+mail+"&pass="+pass;
+    console.log(pass  + " : "+mail);
+    xhr.open("POST",url,true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("mail="+mail+"&pass="+pass);
+}
 
 (function ($) {
     "use strict";

@@ -34,19 +34,20 @@
 				<span class="login100-form-title p-b-37">
 					Sign In
 				</span>
+      <h3 align="center" id="hidden">Invalid Credentials</h3>
 
-      <div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
-        <input class="input100" type="text" name="username" placeholder="username or email">
-        <span class="focus-input100"></span>
+      <div class="wrap-input100 validate-input m-b-20" data-validate="Enter email">
+        <input id = "mail" class="input100" type="text" name="username" placeholder="Email">
+        <span class ="focus-input100"></span>
       </div>
 
       <div class="wrap-input100 validate-input m-b-25" data-validate = "Enter password">
-        <input class="input100" type="password" name="pass" placeholder="password">
+        <input class="input100" id="pass" type="password" name="pass" placeholder="password">
         <span class="focus-input100"></span>
       </div>
 
       <div class="container-login100-form-btn">
-        <button id="signinbtn" class="login100-form-btn">
+        <button id="signinbtn" onclick="login()" class="login100-form-btn">
           Sign In
         </button>
       </div>
