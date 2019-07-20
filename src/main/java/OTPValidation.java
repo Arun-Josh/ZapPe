@@ -8,23 +8,25 @@ import java.io.IOException;
 
 
 
-@WebServlet("/login")
-public class Login extends HttpServlet {
+@WebServlet("/otp")
+public class OTPValidation extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
-        HttpSession session = request.getSession();
+//        HttpSession session = request.getSession();
         String mail = request.getParameter("mail");
-        String pass = request.getParameter("pass");
-        System.out.println("mail : "+ mail+" pass : "+pass);
+        String mobile = request.getParameter("mobile");
+        System.out.println("mail : "+ mail+" pass : "+mobile);
 
 //        BlockChain.startPoint();
 
-        if (mail.equals("user@zappe.com") && pass.equals("qwertyuiop")){
+        if (mail.equals("12345") && mobile.equals("54321")){
             //Sessions
-                session.setAttribute("mail",mail);
-                response.getWriter().print("OK");
+//            session.setAttribute("mail",mail);
+            System.out.println("OTP sucess");
+            response.getWriter().print("OK");
         }
         else {
+            System.out.println("OTP Failed");
             response.getWriter().print("NO");
         }
     }

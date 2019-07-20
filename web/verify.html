@@ -36,17 +36,17 @@
 				</span>
 
             <div class="wrap-input100 validate-input m-b-20" data-validate="Enter OTP received in email">
-                <input class="input100" type="number" name="mailOTP" placeholder="OTP received in email">
+                <input class="input100" type="number" id="mail" required name="mailOTP" placeholder="OTP received in email">
                 <span class="focus-input100"></span>
             </div>
 
             <div class="wrap-input100 validate-input m-b-25" data-validate = "Enter OTP received in mobile">
-                <input class="input100" type="number" name="mobileOTP" placeholder="OTP received in mobile">
+                <input class="input100" type="number" id="mobile" required name="mobileOTP" placeholder="OTP received in mobile">
                 <span class="focus-input100"></span>
             </div>
 
             <div class="container-login100-form-btn">
-                <button class="login100-form-btn">
+                <button class="login100-form-btn" onclick="verifyOTP()">
                     Verify
                 </button>
             </div>

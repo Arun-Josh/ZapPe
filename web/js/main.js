@@ -1,10 +1,80 @@
-// $("signinbtn").click(function(){
+// $("verifybtn").click(function(){
 //     $.ajax({url: "login", success: function(result){
 //             // $("#div1").html(result);
-//
-//             window.location.href
+//             window.location.href = "verify.html";
 //         }});
 // });
+
+function sendMoney() {
+    window.location.href="transfersuccess.html";
+}
+
+function verifyOTP() {
+    var xhr = new XMLHttpRequest();
+    var url = "otp";
+    xhr.onreadystatechange = function () {
+        if(xhr.status==200 && xhr.readyState==4){
+            var reply = xhr.responseText;
+            console.log("reply "+reply);
+            if(reply=="OK"){
+                // alert("verify")
+                // window.location.href="verify.html";
+                reset();
+            }
+            else{
+                console.log("something went wrong")
+                // window.location.href="invalid.html";
+                // document.getElementById("hidden").style.display = "block !important";
+            }
+        }
+    }
+
+    var mobile = document.getElementById("mobile").value;
+    var mail = document.getElementById("mail").value;
+
+    console.log(mobile  + " : "+mail);
+    xhr.open("POST",url,true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("mail="+mail+"&mobile="+mobile);
+
+}
+
+
+function verifyPage() {
+
+    // document.getElementById("admin").style.display="none";
+    // document.getElementById("hidden").style.display="none";
+    // alert("inside verify page")
+
+    var xhr = new XMLHttpRequest();
+    var url = "storeinfo";
+    xhr.onreadystatechange = function () {
+        if(xhr.status==200 && xhr.readyState==4){
+            var reply = xhr.responseText;
+            console.log("reply "+reply);
+            if(reply=="OK"){
+                // alert("verify")
+                window.location.href="verify.html";
+            }
+            else{
+                console.log("something went wrong")
+                // window.location.href="invalid.html";
+                // document.getElementById("hidden").style.display = "block !important";
+            }
+        }
+    }
+    var name = document.getElementById("name").value;
+    var mobileno = document.getElementById("mobileno").value;
+    var pass = document.getElementById("pass").value;
+    var mail = document.getElementById("mail").value;
+
+    console.log(pass  + " : "+mail);
+    xhr.open("POST",url,true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("mail="+mail+"&pass="+pass+"&mobileno="+mobileno+"&name="+name);
+
+    // window.location.href="verify.html";
+}
 
 function login(){
     // document.getElementById("admin").style.display="none";
@@ -21,7 +91,7 @@ function login(){
             }
             else{
                 window.location.href="invalid.html";
-                // document.getElementById("hidden").style.display = "block !important";
+                // document.getElementById("hidden").style.display = "block";
             }
         }
     }

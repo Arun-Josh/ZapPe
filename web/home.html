@@ -105,14 +105,14 @@
             Money Transfer
         </span>
 
-        <div class="wrap-input100 validate-input m-b-20" data-validate="Enter email" style="margin-left: 30px;margin-right: 30px ;">
-          <input id = "mail" class="input100" type="email" required name="username" placeholder="Email">
+        <div class="wrap-input100 " data-validate="Enter email" style="margin-left: 30px;margin-right: 30px ;">
+          <input id = "mail" class="input100" type="email" placeholder="Receiver Email">
           <span class ="focus-input100"></span>
         </div>
 
         <div class="container-login100-form-btn" style="padding: 30px">
-          <button id="signinbtn" onclick="login()" class="login100-form-btn">
-            Sign In
+          <button style="background: green !important;" onclick="sendMoney()" class="login100-form-btn">
+            Pay
           </button>
         </div>
 
@@ -124,8 +124,6 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
   <script src="js/main.js"></script>
-  
-
 </body>
 
 </html>
