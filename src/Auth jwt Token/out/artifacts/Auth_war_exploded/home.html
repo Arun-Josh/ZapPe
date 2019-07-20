@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="ajax()">
+
+<script>
+
+    function ajax() {
+        var token = sessionStorage.getItem("token");
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function (ev) {
+            if(xhr.readyState ==4 && xhr.status ==200){
+                var response = this.responseText;
+                var token = jwtDecode(response)
+                console.log(response);
+                console.log(token.payload.name)
+            }
+            xhr.setRequestHeader("auth",token);
+            xhr.open("GET","Home",true)
+            xhr.send();
+        }
+    }
+
+</script>
+</body>
+</html>
