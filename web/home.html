@@ -45,7 +45,7 @@
 </div>
 
 <div style="padding: 20px ;float: right">
-  <button id="logoutbtn" class="login100-form-btn">
+  <button id="logoutbtn" class="login100-form-btn" onclick="reset()">
     Log out
   </button>
 </div>
@@ -99,11 +99,32 @@
       </button>
     </div>
 
+    <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+      <form>
+        <span class="login100-form-title p-b-37" style="padding: 30px">
+            Money Transfer
+        </span>
+
+        <div class="wrap-input100 validate-input m-b-20" data-validate="Enter email" style="margin-left: 30px;margin-right: 30px ;">
+          <input id = "mail" class="input100" type="email" required name="username" placeholder="Email">
+          <span class ="focus-input100"></span>
+        </div>
+
+        <div class="container-login100-form-btn" style="padding: 30px">
+          <button id="signinbtn" onclick="login()" class="login100-form-btn">
+            Sign In
+          </button>
+        </div>
+
+
+      </form>
+    </div>
+
 
 </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
-
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+  <script src="js/main.js"></script>
   
 
 </body>
