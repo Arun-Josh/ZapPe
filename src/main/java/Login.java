@@ -15,6 +15,8 @@ public class Login extends HttpServlet {
         String pass = request.getParameter("pass");
         System.out.println("mail : "+ mail+" pass : "+pass);
 
+        BlockChain.startPoint();
+
         if (mail.equals("user@zappe.com") && pass.equals("qwertyuiop")){
             //Sessions
                 session.setAttribute("mail",mail);
