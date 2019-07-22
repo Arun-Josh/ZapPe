@@ -9,6 +9,10 @@ function sendMoney() {
     window.location.href="transfersuccess.html";
 }
 
+function successPage() {
+    window.location.href="success.html";
+}
+
 function verifyOTP() {
     var xhr = new XMLHttpRequest();
     var url = "otp";
@@ -18,8 +22,8 @@ function verifyOTP() {
             console.log("reply "+reply);
             if(reply=="OK"){
                 // alert("verify")
-                // window.location.href="verify.html";
-                reset();
+                window.location.href="cardinput.html";
+
             }
             else{
                 console.log("something went wrong")
